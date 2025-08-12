@@ -1,6 +1,52 @@
 import Image from "next/image";
 
 export default function Home() {
+  // News and Events Data
+  const newsEvents = [
+    {
+      id: 1,
+      title: "ACES Tech Summit 2024",
+      description: "Join us for the biggest technology conference of the year featuring industry experts, workshops, and networking opportunities.",
+      backgroundImage: "/news/tech-summit-2024.jpg",
+      facebookLink: "https://www.facebook.com/dorsu.aces/posts/tech-summit-2024"
+    },
+    {
+      id: 2,
+      title: "Coding Bootcamp Workshop",
+      description: "Learn the fundamentals of web development with hands-on projects and expert guidance from our senior members.",
+      backgroundImage: "/news/coding-bootcamp.jpg",
+      facebookLink: "https://www.facebook.com/dorsu.aces/posts/coding-bootcamp"
+    },
+    {
+      id: 3,
+      title: "Engineering Career Fair",
+      description: "Connect with top companies in the engineering and technology sector. Perfect opportunity for internships and job placements.",
+      backgroundImage: "/news/career-fair.jpg",
+      facebookLink: "https://www.facebook.com/dorsu.aces/posts/career-fair"
+    },
+    {
+      id: 4,
+      title: "Hackathon 2024",
+      description: "24-hour coding challenge where teams compete to create innovative solutions for real-world problems.",
+      backgroundImage: "/news/hackathon-2024.jpg",
+      facebookLink: "https://www.facebook.com/dorsu.aces/posts/hackathon-2024"
+    },
+    {
+      id: 5,
+      title: "Alumni Networking Night",
+      description: "Meet successful ACES alumni and build valuable connections for your future career in technology and engineering.",
+      backgroundImage: "/news/alumni-night.jpg",
+      facebookLink: "https://www.facebook.com/dorsu.aces/posts/alumni-night"
+    },
+    {
+      id: 6,
+      title: "Research Symposium",
+      description: "Showcase your research projects and learn about cutting-edge developments in computing and engineering fields.",
+      backgroundImage: "/news/research-symposium.jpg",
+      facebookLink: "https://www.facebook.com/dorsu.aces/posts/research-symposium"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -17,6 +63,7 @@ export default function Home() {
                 <a href="#organizations" className="text-gray-700 hover:text-orange-600 transition-colors">
                   Organizations
                 </a>
+                <a href="#news" className="text-gray-700 hover:text-orange-600 transition-colors">News</a>
                 <a href="/officers" className="text-gray-700 hover:text-orange-600 transition-colors">Officers</a>
                 <a href="#contact" className="text-gray-700 hover:text-orange-600 transition-colors">Contact</a>
               </div>
@@ -217,6 +264,67 @@ export default function Home() {
                 </div>
               ));
             })()}
+          </div>
+        </div>
+      </section>
+
+      {/* News and Events Section */}
+      <section id="news" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">News & Events</h2>
+            <div className="w-24 h-1 bg-orange-600 mx-auto"></div>
+            <p className="text-xl text-gray-600 mt-4 max-w-3xl mx-auto">
+              Stay updated with the latest events, workshops, and opportunities from ACES
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {newsEvents.map((event) => (
+              <div key={event.id} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 overflow-hidden group">
+                {/* Background Image */}
+                <div className="relative h-48 bg-gradient-to-br from-orange-400 to-orange-600 overflow-hidden">
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all duration-300"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center text-white">
+                      <svg className="w-16 h-16 mx-auto mb-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-orange-600 transition-colors">
+                    {event.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4 line-clamp-3">
+                    {event.description}
+                  </p>
+                  
+                  {/* Facebook Link */}
+                  <a 
+                    href={event.facebookLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-orange-600 hover:text-orange-700 font-semibold transition-colors"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                    View on Facebook
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          {/* See More Button */}
+          <div className="text-center">
+            <button className="bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-700 transition-all transform hover:scale-105 animate-glow">
+              See More Events
+            </button>
           </div>
         </div>
       </section>
