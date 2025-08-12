@@ -1,6 +1,16 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   // News and Events Data
   const newsEvents = [
     {
@@ -41,28 +51,95 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-8">
-              <a href="#" className="text-orange-600 font-bold text-xl hover:text-orange-700 transition-colors">
+              <Link href="#" className="text-orange-600 font-bold text-xl hover:text-orange-700 transition-colors">
                 ACES
-              </a>
+              </Link>
               <div className="hidden md:flex space-x-6">
-                <a href="#home" className="text-gray-700 hover:text-orange-600 transition-colors">Home</a>
-                <a href="#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</a>
-                <a href="#organizations" className="text-gray-700 hover:text-orange-600 transition-colors">
+                <Link href="#home" className="text-gray-700 hover:text-orange-600 transition-colors">Home</Link>
+                <Link href="#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</Link>
+                <Link href="#organizations" className="text-gray-700 hover:text-orange-600 transition-colors">
                   Organizations
-                </a>
-                <a href="#news" className="text-gray-700 hover:text-orange-600 transition-colors">News</a>
-                <a href="/officers" className="text-gray-700 hover:text-orange-600 transition-colors">Officers</a>
-                <a href="#contact" className="text-gray-700 hover:text-orange-600 transition-colors">Contact</a>
+                </Link>
+                <Link href="#news" className="text-gray-700 hover:text-orange-600 transition-colors">News</Link>
+                <Link href="/officers" className="text-gray-700 hover:text-orange-600 transition-colors">Officers</Link>
+                <Link href="#contact" className="text-gray-700 hover:text-orange-600 transition-colors">Contact</Link>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <a href="/join" className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors animate-pulse-glow">
+              <Link href="/join" className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors animate-pulse-glow">
                 Join ACES
-              </a>
+              </Link>
+              {/* Mobile menu button */}
+              <button
+                onClick={toggleMobileMenu}
+                className="md:hidden p-2 rounded-lg text-gray-700 hover:text-orange-600 hover:bg-orange-50 transition-colors"
+                aria-label="Toggle mobile menu"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {isMobileMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
             </div>
           </div>
         </div>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-40 md:hidden">
+          {/* Mobile Menu */}
+          <div className="fixed top-16 left-0 right-0 bg-white shadow-lg border-b border-orange-200 transform transition-transform duration-300 ease-in-out">
+            <div className="px-4 py-6 space-y-4">
+              <Link 
+                href="#home" 
+                className="block py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
+                onClick={toggleMobileMenu}
+              >
+                Home
+              </Link>
+              <Link 
+                href="#about" 
+                className="block py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
+                onClick={toggleMobileMenu}
+              >
+                About
+              </Link>
+              <Link 
+                href="#organizations" 
+                className="block py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
+                onClick={toggleMobileMenu}
+              >
+                Organizations
+              </Link>
+              <Link 
+                href="#news" 
+                className="block py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
+                onClick={toggleMobileMenu}
+              >
+                News
+              </Link>
+              <Link 
+                href="/officers" 
+                className="block py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
+                onClick={toggleMobileMenu}
+              >
+                Officers
+              </Link>
+              <Link 
+                href="#contact" 
+                className="block py-3 text-gray-700 hover:text-orange-600 transition-colors"
+                onClick={toggleMobileMenu}
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Hero Section */}
       <section id="home" className="pt-16 min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -96,9 +173,9 @@ export default function Home() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/join" className="bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-700 transition-all transform hover:scale-105 animate-glow inline-block">
+            <Link href="/join" className="bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-700 transition-all transform hover:scale-105 animate-glow inline-block">
               Join ACES
-            </a>
+            </Link>
             <button className="border-2 border-orange-600 text-orange-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-600 hover:text-white transition-all transform hover:scale-105">
               Learn More
             </button>
@@ -355,7 +432,7 @@ export default function Home() {
                   <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
                     <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
                   </div>
                   <div>
@@ -405,7 +482,7 @@ export default function Home() {
           
           {/* Developer Credit */}
           <div className="flex items-center justify-center space-x-4">
-            <span className="text-gray-400 text-sm">Developed by Roberto Jr M. Prisoris using</span>
+            <span className="text-gray-400 text-sm">Developed by Roberto Jr M. Prisoris</span>
             <div className="flex items-center space-x-3">
               {/* Next.js Logo */}
               <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">

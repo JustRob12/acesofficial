@@ -14,6 +14,8 @@ export default function JoinACES() {
     message: ""
   });
 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
@@ -26,6 +28,10 @@ export default function JoinACES() {
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
@@ -53,10 +59,77 @@ export default function JoinACES() {
               <Link href="/join" className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors animate-pulse-glow">
                 Join ACES
               </Link>
+              {/* Mobile menu button */}
+              <button
+                onClick={toggleMobileMenu}
+                className="md:hidden p-2 rounded-lg text-gray-700 hover:text-orange-600 hover:bg-orange-50 transition-colors"
+                aria-label="Toggle mobile menu"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {isMobileMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
             </div>
           </div>
         </div>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-40 md:hidden">
+          {/* Mobile Menu */}
+          <div className="fixed top-16 left-0 right-0 bg-white shadow-lg border-b border-orange-200 transform transition-transform duration-300 ease-in-out">
+            <div className="px-4 py-6 space-y-4">
+              <Link 
+                href="/" 
+                className="block py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
+                onClick={toggleMobileMenu}
+              >
+                Home
+              </Link>
+              <Link 
+                href="/#about" 
+                className="block py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
+                onClick={toggleMobileMenu}
+              >
+                About
+              </Link>
+              <Link 
+                href="/#organizations" 
+                className="block py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
+                onClick={toggleMobileMenu}
+              >
+                Organizations
+              </Link>
+              <Link 
+                href="/#news" 
+                className="block py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
+                onClick={toggleMobileMenu}
+              >
+                News
+              </Link>
+              <Link 
+                href="/officers" 
+                className="block py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
+                onClick={toggleMobileMenu}
+              >
+                Officers
+              </Link>
+              <Link 
+                href="/#contact" 
+                className="block py-3 text-gray-700 hover:text-orange-600 transition-colors"
+                onClick={toggleMobileMenu}
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Hero Section */}
       <div className="relative overflow-hidden pt-16">
