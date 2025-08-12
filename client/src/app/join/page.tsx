@@ -1,7 +1,8 @@
 "use client";
 
-import Image from "next/image";
+
 import { useState } from "react";
+import Link from "next/link";
 
 export default function JoinACES() {
   const [formData, setFormData] = useState({
@@ -34,24 +35,24 @@ export default function JoinACES() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-8">
-              <a href="/" className="text-orange-600 font-bold text-xl hover:text-orange-700 transition-colors">
+              <Link href="/" className="text-orange-600 font-bold text-xl hover:text-orange-700 transition-colors">
                 ACES
-              </a>
+              </Link>
               <div className="hidden md:flex space-x-6">
-                <a href="/" className="text-gray-700 hover:text-orange-600 transition-colors">Home</a>
-                <a href="/#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</a>
-                <a href="/#organizations" className="text-gray-700 hover:text-orange-600 transition-colors">
+                <Link href="/" className="text-gray-700 hover:text-orange-600 transition-colors">Home</Link>
+                <Link href="/#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</Link>
+                <Link href="/#organizations" className="text-gray-700 hover:text-orange-600 transition-colors">
                   Organizations
-                </a>
-                <a href="/#news" className="text-gray-700 hover:text-orange-600 transition-colors">News</a>
-                <a href="/officers" className="text-gray-700 hover:text-orange-600 transition-colors">Officers</a>
-                <a href="/#contact" className="text-gray-700 hover:text-orange-600 transition-colors">Contact</a>
+                </Link>
+                <Link href="/#news" className="text-gray-700 hover:text-orange-600 transition-colors">News</Link>
+                <Link href="/officers" className="text-gray-700 hover:text-orange-600 transition-colors">Officers</Link>
+                <Link href="/#contact" className="text-gray-700 hover:text-orange-600 transition-colors">Contact</Link>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <a href="/join" className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors animate-pulse-glow">
+              <Link href="/join" className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors animate-pulse-glow">
                 Join ACES
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -219,7 +220,7 @@ export default function JoinACES() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">Ready to Join ACES?</h2>
-            <p className="text-orange-100 text-lg">Fill out the form below and we'll get back to you with next steps!</p>
+            <p className="text-orange-100 text-lg">Fill out the form below and we&apos;ll get back to you with next steps!</p>
           </div>
 
           <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl p-8">

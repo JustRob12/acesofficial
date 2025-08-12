@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Officers() {
@@ -227,21 +228,21 @@ export default function Officers() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-8">
-              <a href="/" className="text-orange-600 font-bold text-xl hover:text-orange-700 transition-colors">
+              <Link href="/" className="text-orange-600 font-bold text-xl hover:text-orange-700 transition-colors">
                 ACES
-              </a>
+              </Link>
               <div className="hidden md:flex space-x-6">
-                <a href="/" className="text-gray-700 hover:text-orange-600 transition-colors">Home</a>
-                <a href="/#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</a>
-                <a href="/#organizations" className="text-gray-700 hover:text-orange-600 transition-colors">Organizations</a>
-                <a href="/officers" className="text-orange-600 font-semibold">Officers</a>
-                <a href="/#contact" className="text-gray-700 hover:text-orange-600 transition-colors">Contact</a>
+                <Link href="/" className="text-gray-700 hover:text-orange-600 transition-colors">Home</Link>
+                <Link href="/#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</Link>
+                <Link href="/#organizations" className="text-gray-700 hover:text-orange-600 transition-colors">Organizations</Link>
+                <Link href="/officers" className="text-orange-600 font-semibold">Officers</Link>
+                <Link href="/#contact" className="text-gray-700 hover:text-orange-600 transition-colors">Contact</Link>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <a href="/join" className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors animate-pulse-glow">
+              <Link href="/join" className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors animate-pulse-glow">
                 Join ACES
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -318,7 +319,7 @@ export default function Officers() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-800 mb-6">Join Our Leadership Team</h2>
           <p className="text-lg text-gray-600 mb-8">
-            Interested in becoming an ACES officer? We're always looking for passionate students to join our leadership team.
+            Interested in becoming an ACES officer? We&apos;re always looking for passionate students to join our leadership team.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-700 transition-all transform hover:scale-105 animate-glow">

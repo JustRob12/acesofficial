@@ -200,7 +200,7 @@ export default function Home() {
                 }
               ];
 
-              return organizations.map((org, index) => (
+              return organizations.map((org) => (
                 <div key={org.name} id={org.name.toLowerCase()} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 overflow-visible relative border border-gray-100">
                   {/* Logo overlapping the container */}
                   <div className="absolute -top-12 left-8 z-10">
