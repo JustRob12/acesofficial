@@ -9,6 +9,20 @@ export default function Officers() {
   const officersData = {
     "2023-2024": [
       {
+        position: "ADVISER",
+        name: "Jerd Mutia Dela Gente",
+        image: "/officers/2023-2024/adviser.jpg",
+        description: "Providing guidance and mentorship to ACES leadership and members.",
+        email: "adviser@aces.edu"
+      },
+      {
+        position: "CO-ADVISER",
+        name: "Cindy A. Lasco",
+        image: "/officers/2023-2024/co-adviser.jpg",
+        description: "Supporting the adviser in providing guidance and mentorship to ACES leadership.",
+        email: "coadviser@aces.edu"
+      },
+      {
         position: "GOVERNOR",
         name: "Caryl Jane Sombadon Talaid",
         image: "/officers/2023-2024/governor.jpg",
@@ -67,6 +81,20 @@ export default function Officers() {
     ],
     "2024-2025": [
       {
+        position: "ADVISER",
+        name: "April Joy Uy",
+        image: "/officers/2024-2025/adviser.jpg",
+        description: "Providing guidance and mentorship to ACES leadership and members.",
+        email: "adviser@aces.edu"
+      },
+      {
+        position: "CO-ADVISER",
+        name: "Clint Laurence Mabandos Dueñas",
+        image: "/officers/2024-2025/co-adviser.jpg",
+        description: "Supporting the adviser in providing guidance and mentorship to ACES leadership.",
+        email: "coadviser@aces.edu"
+      },
+      {
         position: "GOVERNOR",
         name: "Tristan Portugaliza",
         image: "/officers/2024-2025/GOVERNOR.png",
@@ -124,6 +152,20 @@ export default function Officers() {
       }
     ],
     "2025-2026": [
+      {
+        position: "ADVISER",
+        name: "April Joy Uy",
+        image: "/officers/2025-2026/adviser.jpg",
+        description: "Providing guidance and mentorship to ACES leadership and members.",
+        email: "adviser@aces.edu"
+      },
+      {
+        position: "CO-ADVISER",
+        name: "Algasher Ato",
+        image: "/officers/2025-2026/co-adviser.jpg",
+        description: "Supporting the adviser in providing guidance and mentorship to ACES leadership.",
+        email: "coadviser@aces.edu"
+      },
       {
         position: "GOVERNOR",
         name: "Jenalyn E. Jonasan",
