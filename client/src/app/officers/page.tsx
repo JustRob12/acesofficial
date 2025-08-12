@@ -10,154 +10,168 @@ export default function Officers() {
     "2023-2024": [
       {
         position: "GOVERNOR",
-        name: "Maria Santos",
-        image: "/officers/governor.svg",
+        name: "Caryl Jane Sombadon Talaid",
+        image: "/officers/2023-2024/governor.jpg",
         description: "Led ACES with exceptional leadership and innovative vision for the 2023-2024 academic year.",
-        email: "maria.santos@aces.edu"
+        email: "governor@aces.edu"
       },
       {
         position: "VICE GOVERNOR",
-        name: "Carlos Rodriguez",
-        image: "/officers/vice-governor.svg",
+        name: "Jethro Malabar",
+        image: "/officers/2023-2024/vice-governor.jpg",
         description: "Supported the governor in managing ACES operations and student initiatives.",
-        email: "carlos.rodriguez@aces.edu"
+        email: "vicegovernor@aces.edu"
       },
       {
         position: "SECRETARY",
-        name: "Ana Martinez",
-        image: "/officers/secretary.svg",
+        name: "Angel Eroy",
+        image: "/officers/2023-2024/secretary.jpg",
         description: "Maintained records and ensured smooth communication within the organization.",
-        email: "ana.martinez@aces.edu"
+        email: "secretary@aces.edu"
       },
       {
         position: "TREASURER",
-        name: "Luis Garcia",
-        image: "/officers/treasurer.svg",
+        name: "Lai Lanie Ventura",
+        image: "/officers/2023-2024/treasurer.jpg",
         description: "Managed financial resources and ensured transparent financial operations.",
-        email: "luis.garcia@aces.edu"
+        email: "treasurer@aces.edu"
       },
       {
         position: "AUDITOR",
-        name: "Elena Torres",
-        image: "/officers/auditor.svg",
+        name: "Rassey Perez",
+        image: "/officers/2023-2024/auditor.jpg",
         description: "Oversaw financial integrity and ensured proper resource allocation.",
-        email: "elena.torres@aces.edu"
+        email: "auditor@aces.edu"
       },
       {
         position: "BUSINESS MANAGER",
-        name: "Roberto Lopez",
-        image: "/officers/business-manager.svg",
+        name: "John Paul Colita",
+        image: "/officers/2023-2024/business-manager.jpg",
         description: "Coordinated business partnerships and managed external relations.",
-        email: "roberto.lopez@aces.edu"
+        email: "businessmanager@aces.edu"
       },
       {
         position: "PIO",
-        name: "Isabella Cruz",
-        image: "/officers/pio.svg",
+        name: "Ryan Pete Lad",
+        image: "/officers/2023-2024/pio.jpg",
         description: "Managed public relations and communication with the student body and community.",
-        email: "isabella.cruz@aces.edu"
+        email: "pio@aces.edu"
+      },
+      {
+        position: "PIO 2",
+        name: "Lester Jon Nunez",
+        image: "/officers/2023-2024/pio2.jpg",
+        description: "Assisted in public relations and communication with the student body and community.",
+        email: "pio2@aces.edu"
       }
     ],
     "2024-2025": [
       {
         position: "GOVERNOR",
-        name: "John Doe",
-        image: "/officers/governor.svg",
+        name: "Tristan Portugaliza",
+        image: "/officers/2024-2025/GOVERNOR.png",
         description: "Leading ACES with vision and dedication to empower computing and engineering students.",
         email: "governor@aces.edu"
       },
       {
         position: "VICE GOVERNOR",
-        name: "Jane Smith",
-        image: "/officers/vice-governor.svg",
+        name: "John Paul Colita",
+        image: "/officers/2024-2025/VICE-GOVERNOR.png",
         description: "Supporting the governor in managing ACES operations and student initiatives.",
         email: "vicegovernor@aces.edu"
       },
       {
         position: "SECRETARY",
-        name: "Mike Johnson",
-        image: "/officers/secretary.svg",
+        name: "Zandra Kate Ruin",
+        image: "/officers/2024-2025/SECRETARY.png",
         description: "Maintaining records and ensuring smooth communication within the organization.",
         email: "secretary@aces.edu"
       },
       {
         position: "TREASURER",
-        name: "Sarah Wilson",
-        image: "/officers/treasurer.svg",
+        name: "Kate Rodriguez",
+        image: "/officers/2024-2025/TREASURER.png",
         description: "Managing financial resources and ensuring transparent financial operations.",
         email: "treasurer@aces.edu"
       },
       {
         position: "AUDITOR",
-        name: "David Brown",
-        image: "/officers/auditor.svg",
+        name: "Rodgeline Bansagan",
+        image: "/officers/2024-2025/AUDITOR.png",
         description: "Overseeing financial integrity and ensuring proper resource allocation.",
         email: "auditor@aces.edu"
       },
       {
         position: "BUSINESS MANAGER",
-        name: "Lisa Garcia",
-        image: "/officers/business-manager.svg",
+        name: "Rezrafel Umbukan",
+        image: "/officers/2024-2025/BUSINESS MANAGER.png",
         description: "Coordinating business partnerships and managing external relations.",
         email: "businessmanager@aces.edu"
       },
       {
         position: "PIO",
-        name: "Alex Chen",
-        image: "/officers/pio.svg",
+        name: "Roberto Jr M. Prisoris",
+        image: "/officers/2024-2025/pio.jpg",
         description: "Managing public relations and communication with the student body and community.",
         email: "pio@aces.edu"
+      },
+      {
+        position: "PIO 2",
+        name: "Joomer Jake C. Caballero",
+        image: "/officers/2024-2025/pio2.jpg",
+        description: "Assisted in public relations and communication with the student body and community.",
+        email: "pio2@aces.edu"
       }
     ],
     "2025-2026": [
       {
         position: "GOVERNOR",
-        name: "Emily Davis",
-        image: "/officers/governor.svg",
+        name: "Jenalyn E. Jonasan",
+        image: "/officers/2025-2026/governor.jpg",
         description: "Leading ACES into the future with innovative approaches and student-centered leadership.",
-        email: "emily.davis@aces.edu"
+        email: "governor@aces.edu"
       },
       {
         position: "VICE GOVERNOR",
-        name: "Michael Chen",
-        image: "/officers/vice-governor.svg",
+        name: "Clarence Jay P. Magbutay",
+        image: "/officers/2025-2026/vice-governor.jpg",
         description: "Supporting the governor in managing ACES operations and student initiatives.",
-        email: "michael.chen@aces.edu"
+        email: "vicegovernor@aces.edu"
       },
       {
         position: "SECRETARY",
-        name: "Sophia Kim",
-        image: "/officers/secretary.svg",
+        name: "Muhajer M. Onofre",
+        image: "/officers/2025-2026/secretary.jpg",
         description: "Maintaining records and ensuring smooth communication within the organization.",
-        email: "sophia.kim@aces.edu"
+        email: "secretary@aces.edu"
       },
       {
         position: "TREASURER",
-        name: "Daniel Park",
-        image: "/officers/treasurer.svg",
+        name: "Cyrine S. Ganloy",
+        image: "/officers/2025-2026/treasurer.jpg",
         description: "Managing financial resources and ensuring transparent financial operations.",
-        email: "daniel.park@aces.edu"
+        email: "treasurer@aces.edu"
       },
       {
         position: "AUDITOR",
-        name: "Jessica Lee",
-        image: "/officers/auditor.svg",
+        name: "Kian Carl O. Escala",
+        image: "/officers/2025-2026/auditor.jpg",
         description: "Overseeing financial integrity and ensuring proper resource allocation.",
-        email: "jessica.lee@aces.edu"
+        email: "auditor@aces.edu"
       },
       {
         position: "BUSINESS MANAGER",
-        name: "Ryan Thompson",
-        image: "/officers/business-manager.svg",
+        name: "Adelfo P. Manawataw Jr.",
+        image: "/officers/2025-2026/business-manager.jpg",
         description: "Coordinating business partnerships and managing external relations.",
-        email: "ryan.thompson@aces.edu"
+        email: "businessmanager@aces.edu"
       },
       {
         position: "PIO",
-        name: "Amanda White",
-        image: "/officers/pio.svg",
+        name: "Christian Kirt V. Basog",
+        image: "/officers/2025-2026/pio.jpg",
         description: "Managing public relations and communication with the student body and community.",
-        email: "amanda.white@aces.edu"
+        email: "pio@aces.edu"
       }
     ]
   };
@@ -177,15 +191,15 @@ export default function Officers() {
               <div className="hidden md:flex space-x-6">
                 <a href="/" className="text-gray-700 hover:text-orange-600 transition-colors">Home</a>
                 <a href="/#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</a>
-                <a href="/#events" className="text-gray-700 hover:text-orange-600 transition-colors">Events</a>
+                <a href="/#organizations" className="text-gray-700 hover:text-orange-600 transition-colors">Organizations</a>
                 <a href="/officers" className="text-orange-600 font-semibold">Officers</a>
                 <a href="/#contact" className="text-gray-700 hover:text-orange-600 transition-colors">Contact</a>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors animate-pulse-glow">
+              <a href="/join" className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors animate-pulse-glow">
                 Join ACES
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -233,25 +247,23 @@ export default function Officers() {
             {officers.map((officer, index) => (
               <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 overflow-hidden">
                 {/* Officer Image */}
-                <div className="relative h-64 bg-gradient-primary">
+                <div className="relative h-64 bg-gradient-primary flex items-center justify-center">
                   <Image
                     src={officer.image}
                     alt={`${officer.name} - ${officer.position}`}
-                    fill
-                    className="object-cover"
+                    width={180}
+                    height={180}
+                    className="object-contain border-4 border-orange-500 rounded-full"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
                 </div>
                 
                 {/* Officer Info */}
-                <div className="p-6">
-                  <div className="text-center mb-4">
-                    <h3 className="text-lg font-semibold text-orange-600 mb-1">{officer.position}</h3>
+                <div className="p-4">
+                  <div className="text-center mb-2">
+                    <h3 className="text-2xl font-bold text-orange-600 mb-1">{officer.position}</h3>
                     <h4 className="text-xl font-bold text-gray-800 mb-2">{officer.name}</h4>
-                    <p className="text-gray-600 text-sm mb-4">{officer.description}</p>
+                    <p className="text-gray-600 text-sm">{officer.description}</p>
                   </div>
-                  
-
                 </div>
               </div>
             ))}

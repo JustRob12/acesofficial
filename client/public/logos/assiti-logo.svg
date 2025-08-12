@@ -1,0 +1,7 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="40" cy="40" r="38" fill="#6B7280" stroke="white" stroke-width="4"/>
+  <path d="M25 35 L40 25 L55 35 L55 45 L40 55 L25 45 Z" fill="white"/>
+  <rect x="30" y="30" width="20" height="15" fill="#6B7280"/>
+  <circle cx="40" cy="37" r="3" fill="white"/>
+  <text x="40" y="75" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8" font-weight="bold">ASSITI</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="40" cy="40" r="38" fill="#06B6D4" stroke="white" stroke-width="4"/>
+  <rect x="20" y="25" width="40" height="30" rx="4" fill="white"/>
+  <rect x="25" y="30" width="30" height="20" fill="#06B6D4"/>
+  <circle cx="35" cy="40" r="2" fill="white"/>
+  <circle cx="45" cy="40" r="2" fill="white"/>
+  <text x="40" y="75" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="6" font-weight="bold">CODEYTERES</text>
+</svg>
