@@ -5,46 +5,33 @@ export default function Home() {
   const newsEvents = [
     {
       id: 1,
-      title: "ACES Tech Summit 2024",
-      description: "Join us for the biggest technology conference of the year featuring industry experts, workshops, and networking opportunities.",
-      backgroundImage: "/news/tech-summit-2024.jpg",
-      facebookLink: "https://www.facebook.com/dorsu.aces/posts/tech-summit-2024"
+      title: "Looking for Passionated and committed Members on Our ACES Committees",
+      description: "Join our dynamic ACES committees and be part of a passionate team dedicated to innovation and excellence in computing and engineering.",
+      backgroundImage: "/events/aces-committees.jpg",
+      facebookLink: "https://www.facebook.com/share/p/1CFoFG7J4n/"
     },
     {
       id: 2,
-      title: "Coding Bootcamp Workshop",
-      description: "Learn the fundamentals of web development with hands-on projects and expert guidance from our senior members.",
-      backgroundImage: "/news/coding-bootcamp.jpg",
-      facebookLink: "https://www.facebook.com/dorsu.aces/posts/coding-bootcamp"
+      title: "Buwan ng Wika, Buwan ng Kaalaman",
+      description: "Celebrating Filipino language and knowledge month with cultural activities and educational programs that showcase our rich heritage.",
+      backgroundImage: "/events/buwan-ng-wika.jpg",
+      facebookLink: "https://www.facebook.com/share/p/1BxFB274bJ/"
     },
     {
       id: 3,
-      title: "Engineering Career Fair",
-      description: "Connect with top companies in the engineering and technology sector. Perfect opportunity for internships and job placements.",
-      backgroundImage: "/news/career-fair.jpg",
-      facebookLink: "https://www.facebook.com/dorsu.aces/posts/career-fair"
+      title: "Ever wondered why our ACES fam chose FaCET?",
+      description: "Discover the reasons behind why ACES members chose the Faculty of Computing and Engineering Technology and what makes it special.",
+      backgroundImage: "/events/aces-facet.jpg",
+      facebookLink: "https://www.facebook.com/share/p/14K8VqLswrj/"
     },
     {
       id: 4,
-      title: "Hackathon 2024",
-      description: "24-hour coding challenge where teams compete to create innovative solutions for real-world problems.",
-      backgroundImage: "/news/hackathon-2024.jpg",
-      facebookLink: "https://www.facebook.com/dorsu.aces/posts/hackathon-2024"
+      title: "Paglinang sa Filipino at Katutubong Wika: Makasaysayan sa Pagkakaisa ng Bansa",
+      description: "Exploring Filipino and indigenous languages as historical foundations for national unity and cultural preservation.",
+      backgroundImage: "/events/filipino-wika.jpg",
+      facebookLink: "https://www.facebook.com/share/p/1FD41fADNP/"
     },
-    {
-      id: 5,
-      title: "Alumni Networking Night",
-      description: "Meet successful ACES alumni and build valuable connections for your future career in technology and engineering.",
-      backgroundImage: "/news/alumni-night.jpg",
-      facebookLink: "https://www.facebook.com/dorsu.aces/posts/alumni-night"
-    },
-    {
-      id: 6,
-      title: "Research Symposium",
-      description: "Showcase your research projects and learn about cutting-edge developments in computing and engineering fields.",
-      backgroundImage: "/news/research-symposium.jpg",
-      facebookLink: "https://www.facebook.com/dorsu.aces/posts/research-symposium"
-    }
+
   ];
 
   return (
@@ -283,15 +270,14 @@ export default function Home() {
             {newsEvents.map((event) => (
               <div key={event.id} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 overflow-hidden group">
                 {/* Background Image */}
-                <div className="relative h-48 bg-gradient-to-br from-orange-400 to-orange-600 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={event.backgroundImage}
+                    alt={event.title}
+                    fill
+                    className="object-cover"
+                  />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all duration-300"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <svg className="w-16 h-16 mx-auto mb-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                      </svg>
-                    </div>
-                  </div>
                 </div>
                 
                 {/* Content */}
@@ -413,9 +399,43 @@ export default function Home() {
           <p className="text-gray-300 mb-4">
             Association of Computing and Engineering Students - Empowering future tech leaders through innovation, collaboration, and excellence.
           </p>
-          <p className="text-gray-300">
+          <p className="text-gray-300 mb-4">
             © 2024 ACES - Association of Computing and Engineering Students. All rights reserved.
           </p>
+          
+          {/* Developer Credit */}
+          <div className="flex items-center justify-center space-x-4">
+            <span className="text-gray-400 text-sm">Developed by Roberto Jr M. Prisoris using</span>
+            <div className="flex items-center space-x-3">
+              {/* Next.js Logo */}
+              <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                <svg className="w-4 h-4" viewBox="0 0 128 128">
+                  <path d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64c11.2 0 21.7-2.9 30.8-7.9L48.4 55.3v36.6h-6.8V41.8h6.8l50.5 75.8C116.4 106.2 128 86.5 128 64c0-35.3-28.7-64-64-64zm22.1 84.6l-7.5-11.3V41.8h7.5v42.8z" fill="#000"/>
+                </svg>
+              </div>
+              
+              {/* Tailwind CSS Logo */}
+              <div className="w-6 h-6 bg-cyan-500 rounded flex items-center justify-center">
+                <svg className="w-4 h-4 text-white" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/>
+                </svg>
+              </div>
+              
+              {/* React Logo */}
+              <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                <svg className="w-4 h-4 text-white" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M14.23,12.004a2.236,2.236,0,0,1-2.235,2.236,2.236,2.236,0,0,1-2.236-2.236,2.236,2.236,0,0,1,2.235-2.236A2.236,2.236,0,0,1,14.23,12.004ZM11.995,24a11.975,11.975,0,0,1-2.4-.244l.691-.24a10.261,10.261,0,0,0,4.691,0l.691.24A11.975,11.975,0,0,1,11.995,24ZM3.52,18.644l.472-.274a10.276,10.276,0,0,0,2.028-2.764l-.753-.438a11.267,11.267,0,0,1-2.187,3.054ZM2.332,7.06l.753-.438a10.276,10.276,0,0,0,2.028-2.764L5.04,3.024a11.267,11.267,0,0,1-2.187,3.054ZM16.956,3.024l-.472-.274a10.276,10.276,0,0,0-2.028-2.764l.753-.438a11.267,11.267,0,0,1,2.187,3.054ZM20.468,18.644a11.267,11.267,0,0,1-2.187-3.054l-.753.438a10.276,10.276,0,0,0,2.028,2.764ZM22.668,7.06a11.267,11.267,0,0,1-2.187-3.054l-.753.438a10.276,10.276,0,0,0,2.028,2.764ZM8.306,20.863l-.691.24a11.975,11.975,0,0,1-2.4.244,11.975,11.975,0,0,1-2.4-.244l-.691-.24a10.261,10.261,0,0,0,4.691,0ZM2.592,14.058a11.267,11.267,0,0,1-2.187-3.054L.652,10.73a10.276,10.276,0,0,0,2.028,2.764ZM21.408,14.058a10.276,10.276,0,0,0,2.028-2.764l-.753-.438a11.267,11.267,0,0,1-2.187,3.054ZM23.348,10.73l-.753.438a11.267,11.267,0,0,1-2.187,3.054l.753.438a10.276,10.276,0,0,0,2.028-2.764ZM.652,13.27l.753.438a11.267,11.267,0,0,1,2.187-3.054L2.68,10.23A10.276,10.276,0,0,0,.652,13.27Z"/>
+                </svg>
+              </div>
+              
+              {/* TypeScript Logo */}
+              <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center">
+                <svg className="w-4 h-4 text-white" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.41.47.197.892.423 1.266.676.374.253.68.551.918.893.237.343.356.748.356 1.216 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
