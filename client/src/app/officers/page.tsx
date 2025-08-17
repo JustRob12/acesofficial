@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 export default function Officers() {
   const [selectedYear, setSelectedYear] = useState("2025-2026");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [imageErrors, setImageErrors] = useState<Set<string>>(new Set());
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -370,6 +371,21 @@ export default function Officers() {
                     width={180}
                     height={180}
                     className="object-contain border-4 border-orange-500 rounded-full"
+                    onError={(e) => {
+                      // Fallback to SVG icon if image fails to load
+                      const target = e.target as HTMLImageElement;
+                      const position = officer.position.toLowerCase().replace(/\s+/g, '-');
+                      const fallbackSrc = `/officers/${position}.svg`;
+                      
+                      // Only try fallback if we haven't already tried it
+                      if (!imageErrors.has(fallbackSrc)) {
+                        setImageErrors(prev => new Set(prev).add(fallbackSrc));
+                        target.src = fallbackSrc;
+                      } else {
+                        // If fallback also fails, show a placeholder
+                        target.src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiBmaWxsPSIjRkY5ODAwIi8+Cjx0ZXh0IHg9IjkwIiB5PSI5MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjQ4IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkE8L3RleHQ+Cjwvc3ZnPgo=";
+                      }
+                    }}
                   />
                 </div>
                 
