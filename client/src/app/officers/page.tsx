@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function Officers() {
   const [selectedYear, setSelectedYear] = useState("2025-2026");

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 
 interface UseLoadingStateOptions {
   minLoadingTime?: number; // Minimum time to show loading (ms)
@@ -58,11 +58,11 @@ export function useLoadingState(options: UseLoadingStateOptions = {}) {
   }, [startLoading, stopLoading]);
 
   // Auto-detect slow loading for data fetching
-  const detectSlowLoading = useCallback((promise: Promise<any>, customMessage?: string) => {
+  const detectSlowLoading = useCallback((promise: Promise<unknown>, customMessage?: string) => {
     let timeoutId: NodeJS.Timeout;
     let hasShownLoading = false;
 
-    const timeoutPromise = new Promise((_, reject) => {
+    const timeoutPromise = new Promise<never>((_, _reject) => {
       timeoutId = setTimeout(() => {
         if (!hasShownLoading) {
           startLoading(customMessage);
