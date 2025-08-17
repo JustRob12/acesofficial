@@ -414,9 +414,6 @@ export default function Officers() {
             <button className="bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-700 transition-all transform hover:scale-105 animate-glow">
               Apply for Position
             </button>
-            <button className="border-2 border-orange-600 text-orange-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-600 hover:text-white transition-all transform hover:scale-105">
-              Learn More
-            </button>
           </div>
         </div>
       </section>

@@ -192,9 +192,6 @@ export default function Home() {
             <Link href="/join" className="bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-700 transition-all transform hover:scale-105 animate-glow inline-block">
               Join ACES
             </Link>
-            <button className="border-2 border-orange-600 text-orange-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-600 hover:text-white transition-all transform hover:scale-105">
-              Learn More
-            </button>
           </div>
         </div>
       </section>
@@ -242,7 +239,7 @@ export default function Home() {
       </section>
 
       {/* Organizations Section */}
-      <section id="organizations" className="py-20 bg-white">
+      <section id="organizations" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Organizations</h2>
@@ -252,7 +249,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-12">
             {(() => {
               const organizations = [
                 {
@@ -260,7 +257,7 @@ export default function Home() {
                   fullName: "Junior Philippine Institute of Civil Engineers",
                   description: "The premier organization for Civil Engineering students, fostering leadership and professional development in the field of civil engineering.",
                   course: "BSCE - Bachelor of Science in Civil Engineering",
-                  color: "from-violet-500 to-violet-600",
+                  color: "violet",
                   logo: "/logos/jpice.png",
                   features: ["Professional Development", "Technical Skills", "Leadership Training", "Industry Connections"]
                 },
@@ -269,7 +266,7 @@ export default function Home() {
                   fullName: "Computer Engineering Society",
                   description: "Empowering Computer Engineering students through technology innovation, hands-on projects, and industry collaboration.",
                   course: "BSIT - Bachelor of Science in Information Technology",
-                  color: "from-cyan-500 to-cyan-600",
+                  color: "cyan",
                   logo: "/logos/codebyters.png",
                   features: ["Programming Workshops", "Hardware Projects", "Tech Innovation", "Industry Partnerships"]
                 },
@@ -278,7 +275,7 @@ export default function Home() {
                   fullName: "Association of Industrial Technology Innovators",
                   description: "Advancing industrial technology education and fostering a community of future technology innovators through practical learning and innovation.",
                   course: "BITM - Bachelor of Information Technology Management",
-                  color: "from-gray-500 to-gray-600",
+                  color: "gray",
                   logo: "/logos/assiti.png",
                   features: ["Industrial Technology", "Digital Solutions", "Business Technology", "Project Management"]
                 },
@@ -287,58 +284,49 @@ export default function Home() {
                   fullName: "Society of Mathematics Major",
                   description: "Building the future through mathematical innovation, analytical excellence, and mathematical leadership development.",
                   course: "BSM/BSMRS - Bachelor of Science in Mathematics",
-                  color: "from-green-500 to-green-600",
+                  color: "green",
                   logo: "/logos/smm.png",
                   features: ["Mathematical Analysis", "Statistical Modeling", "Research Projects", "Academic Excellence"]
                 }
               ];
 
               return organizations.map((org) => (
-                <div key={org.name} id={org.name.toLowerCase()} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 overflow-visible relative border border-gray-100">
-                  {/* Logo overlapping the container */}
-                  <div className="absolute -top-12 left-8 z-10">
-                    <div className="w-32 h-32 bg-white rounded-full shadow-lg flex items-center justify-center">
+                <div key={org.name} id={org.name.toLowerCase()} className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden">
+                  {/* Header with logo and title */}
+                  <div className="flex items-center p-6 border-b border-gray-100">
+                    <div className="w-28 h-28 bg-gray-50 rounded-lg flex items-center justify-center mr-6">
                       <Image
                         src={org.logo}
                         alt={`${org.name} Logo`}
-                        width={100}
-                        height={100}
+                        width={80}
+                        height={80}
                         className="object-contain"
                       />
                     </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-800">{org.name}</h3>
+                      <p className="text-sm text-gray-500 font-medium">{org.course}</p>
+                    </div>
                   </div>
                   
-                  <div className={`bg-gradient-to-r ${org.color} p-8 text-white pt-20`}>
-                    <div className="flex items-center justify-end mb-4">
-                      <div className="text-right">
-                        <h3 className="text-4xl font-bold">{org.name}</h3>
-                        <p className="text-lg opacity-90">{org.fullName}</p>
-                      </div>
-                    </div>
-                    <p className="text-sm opacity-90 mb-4">{org.course}</p>
-                  </div>
-                  
-                  <div className="p-8">
-                    <p className="text-gray-600 mb-6">{org.description}</p>
+                  {/* Content */}
+                  <div className="p-6">
+                    <h4 className="text-lg font-semibold text-gray-800 mb-2">{org.fullName}</h4>
+                    <p className="text-gray-600 mb-6 leading-relaxed">{org.description}</p>
                     
-                    <div className="space-y-3">
-                      <h4 className="font-semibold text-gray-800 mb-3">Key Features:</h4>
-                      <ul className="space-y-2">
-                        {org.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center text-gray-600">
-                            <svg className="w-4 h-4 text-orange-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div className="mt-8 pt-6 border-t border-gray-200">
-                      <button className={`w-full bg-gradient-to-r ${org.color} text-white py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity`}>
-                        Learn More About {org.name}
-                      </button>
+                    {/* Features */}
+                    <div className="grid grid-cols-2 gap-3">
+                      {org.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center text-sm text-gray-600">
+                          <div className={`w-2 h-2 rounded-full mr-3 flex-shrink-0 ${
+                            org.name === 'JPICE' ? 'bg-violet-500' :
+                            org.name === 'CODEYTERES' ? 'bg-cyan-500' :
+                            org.name === 'ASSITI' ? 'bg-gray-500' :
+                            org.name === 'SMM' ? 'bg-green-500' : 'bg-orange-500'
+                          }`}></div>
+                          {feature}
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -416,10 +404,10 @@ export default function Home() {
             <div className="w-24 h-1 bg-orange-600 mx-auto"></div>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-2xl font-semibold text-gray-800 mb-6">Contact Information</h3>
-              <div className="space-y-4">
+          <div className="flex justify-center">
+            <div className="max-w-md">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Contact Information</h3>
+              <div className="space-y-5">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
                     <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -440,7 +428,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-800">Phone</p>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                    <p className="text-gray-600">09363288483</p>
                   </div>
                 </div>
                 
@@ -453,13 +441,13 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-800">Location</p>
-                    <p className="text-gray-600">Engineering Building, Room 301</p>
+                    <p className="text-gray-600">Extension Building, Second Floor</p>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div>
+            {/* <div>
               <h3 className="text-2xl font-semibold text-gray-800 mb-6">Send us a Message</h3>
               <form className="space-y-4">
                 <div>
@@ -475,7 +463,7 @@ export default function Home() {
                   Send Message
                 </button>
               </form>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
