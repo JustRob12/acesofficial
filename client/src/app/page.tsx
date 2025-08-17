@@ -3,12 +3,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useNavigation } from "../components/NavigationProvider";
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { navigateWithLoading } = useNavigation();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleNavigation = (href: string, message?: string) => {
+    if (href.startsWith('#')) {
+      // Handle anchor links
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Handle page navigation
+      navigateWithLoading(href, message);
+    }
   };
 
   // News and Events Data
@@ -55,14 +70,15 @@ export default function Home() {
                 ACES
               </Link>
               <div className="hidden md:flex space-x-6">
-                <Link href="#home" className="text-gray-700 hover:text-orange-600 transition-colors">Home</Link>
-                <Link href="#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</Link>
-                <Link href="#organizations" className="text-gray-700 hover:text-orange-600 transition-colors">
+                <button onClick={() => handleNavigation("#home")} className="text-gray-700 hover:text-orange-600 transition-colors">Home</button>
+                <button onClick={() => handleNavigation("#about")} className="text-gray-700 hover:text-orange-600 transition-colors">About</button>
+                <button onClick={() => handleNavigation("#organizations")} className="text-gray-700 hover:text-orange-600 transition-colors">
                   Organizations
-                </Link>
-                <Link href="#news" className="text-gray-700 hover:text-orange-600 transition-colors">News</Link>
-                <Link href="/officers" className="text-gray-700 hover:text-orange-600 transition-colors">Officers</Link>
-                <Link href="#contact" className="text-gray-700 hover:text-orange-600 transition-colors">Contact</Link>
+                </button>
+                <button onClick={() => handleNavigation("#news")} className="text-gray-700 hover:text-orange-600 transition-colors">News</button>
+                <button onClick={() => handleNavigation("/officers", "Loading Officers...")} className="text-gray-700 hover:text-orange-600 transition-colors">Officers</button>
+                <button onClick={() => handleNavigation("#", "Loading Acetrack...")} className="text-gray-700 hover:text-orange-600 transition-colors">Acetrack</button>
+                <button onClick={() => handleNavigation("#contact")} className="text-gray-700 hover:text-orange-600 transition-colors">Contact</button>
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -94,48 +110,48 @@ export default function Home() {
           {/* Mobile Menu */}
           <div className="fixed top-16 left-0 right-0 bg-white shadow-lg border-b border-orange-200 transform transition-transform duration-300 ease-in-out">
             <div className="px-4 py-6 space-y-4">
-              <Link 
-                href="#home" 
-                className="block py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
-                onClick={toggleMobileMenu}
+              <button 
+                onClick={() => { handleNavigation("#home"); toggleMobileMenu(); }}
+                className="block w-full text-left py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
               >
                 Home
-              </Link>
-              <Link 
-                href="#about" 
-                className="block py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
-                onClick={toggleMobileMenu}
+              </button>
+              <button 
+                onClick={() => { handleNavigation("#about"); toggleMobileMenu(); }}
+                className="block w-full text-left py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
               >
                 About
-              </Link>
-              <Link 
-                href="#organizations" 
-                className="block py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
-                onClick={toggleMobileMenu}
+              </button>
+              <button 
+                onClick={() => { handleNavigation("#organizations"); toggleMobileMenu(); }}
+                className="block w-full text-left py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
               >
                 Organizations
-              </Link>
-              <Link 
-                href="#news" 
-                className="block py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
-                onClick={toggleMobileMenu}
+              </button>
+              <button 
+                onClick={() => { handleNavigation("#news"); toggleMobileMenu(); }}
+                className="block w-full text-left py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
               >
                 News
-              </Link>
-              <Link 
-                href="/officers" 
-                className="block py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
-                onClick={toggleMobileMenu}
+              </button>
+              <button 
+                onClick={() => { handleNavigation("/officers", "Loading Officers..."); toggleMobileMenu(); }}
+                className="block w-full text-left py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
               >
                 Officers
-              </Link>
-              <Link 
-                href="#contact" 
-                className="block py-3 text-gray-700 hover:text-orange-600 transition-colors"
-                onClick={toggleMobileMenu}
+              </button>
+              <button 
+                onClick={() => { handleNavigation("#", "Loading Acetrack..."); toggleMobileMenu(); }}
+                className="block w-full text-left py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
+              >
+                Acetrack
+              </button>
+              <button 
+                onClick={() => { handleNavigation("#contact"); toggleMobileMenu(); }}
+                className="block w-full text-left py-3 text-gray-700 hover:text-orange-600 transition-colors"
               >
                 Contact
-              </Link>
+              </button>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Officers() {
   const [selectedYear, setSelectedYear] = useState("2025-2026");
@@ -31,56 +31,56 @@ export default function Officers() {
       {
         position: "GOVERNOR",
         name: "Caryl Jane Sombadon Talaid",
-        image: "/officers/2023-2024/governor.jpg",
+        image: "/officers/2023-2024/governor.png",
         description: "Led ACES with exceptional leadership and innovative vision for the 2023-2024 academic year.",
         email: "governor@aces.edu"
       },
       {
         position: "VICE GOVERNOR",
         name: "Jethro Malabar",
-        image: "/officers/2023-2024/vice-governor.jpg",
+        image: "/officers/2023-2024/vice-governor.png",
         description: "Supported the governor in managing ACES operations and student initiatives.",
         email: "vicegovernor@aces.edu"
       },
       {
         position: "SECRETARY",
         name: "Angel Eroy",
-        image: "/officers/2023-2024/secretary.jpg",
+        image: "/officers/2023-2024/secretary.png",
         description: "Maintained records and ensured smooth communication within the organization.",
         email: "secretary@aces.edu"
       },
       {
         position: "TREASURER",
         name: "Lai Lanie Ventura",
-        image: "/officers/2023-2024/treasurer.jpg",
+        image: "/officers/2023-2024/treasurer.png",
         description: "Managed financial resources and ensured transparent financial operations.",
         email: "treasurer@aces.edu"
       },
       {
         position: "AUDITOR",
         name: "Rassey Perez",
-        image: "/officers/2023-2024/auditor.jpg",
+        image: "/officers/2023-2024/auditor.png",
         description: "Oversaw financial integrity and ensured proper resource allocation.",
         email: "auditor@aces.edu"
       },
       {
         position: "BUSINESS MANAGER",
         name: "John Paul Colita",
-        image: "/officers/2023-2024/business-manager.jpg",
+        image: "/officers/2023-2024/business-manager.png",
         description: "Coordinated business partnerships and managed external relations.",
         email: "businessmanager@aces.edu"
       },
       {
         position: "PIO",
         name: "Ryan Pete Lad",
-        image: "/officers/2023-2024/pio.jpg",
+        image: "/officers/2023-2024/pio.png",
         description: "Managed public relations and communication with the student body and community.",
         email: "pio@aces.edu"
       },
       {
         position: "PIO 2",
         name: "Lester Jon Nunez",
-        image: "/officers/2023-2024/pio2.jpg",
+        image: "/officers/2023-2024/pio2.png",
         description: "Assisted in public relations and communication with the student body and community.",
         email: "pio2@aces.edu"
       }
@@ -241,6 +241,7 @@ export default function Officers() {
                 <Link href="/#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</Link>
                 <Link href="/#organizations" className="text-gray-700 hover:text-orange-600 transition-colors">Organizations</Link>
                 <Link href="/officers" className="text-orange-600 font-semibold">Officers</Link>
+                <Link href="#" className="text-gray-700 hover:text-orange-600 transition-colors">Acetrack</Link>
                 <Link href="/#contact" className="text-gray-700 hover:text-orange-600 transition-colors">Contact</Link>
               </div>
             </div>
@@ -302,6 +303,13 @@ export default function Officers() {
                 Officers
               </Link>
               <Link 
+                href="#" 
+                className="block py-3 text-gray-700 hover:text-orange-600 transition-colors border-b border-gray-100"
+                onClick={toggleMobileMenu}
+              >
+                Acetrack
+              </Link>
+              <Link 
                 href="/#contact" 
                 className="block py-3 text-gray-700 hover:text-orange-600 transition-colors"
                 onClick={toggleMobileMenu}
@@ -333,9 +341,9 @@ export default function Officers() {
                    onChange={(e) => setSelectedYear(e.target.value)}
                    className="appearance-none bg-white border-2 border-orange-300 rounded-lg px-6 py-3 pr-10 text-lg font-semibold text-gray-800 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent shadow-lg hover:border-orange-400 transition-colors"
                  >
-                   <option value="2023-2024">Academic Year 2023-2024 (Previous)</option>
-                   <option value="2024-2025">Academic Year 2024-2025 (Past)</option>
-                   <option value="2025-2026">Academic Year 2025-2026 (Current)</option>
+                   <option value="2023-2024">Academic Year 2023-2024</option>
+                   <option value="2024-2025">Academic Year 2024-2025</option>
+                   <option value="2025-2026">Academic Year 2025-2026</option>
                  </select>
                 <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                   <svg className="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
